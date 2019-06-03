@@ -1,5 +1,15 @@
+# Windows
 # New
-python .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates.config --model_dir=.\workspace\cr_license_detection\training\model
+python .\research\object_detection\model_main.py --alsologtostderr --train_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates.config --model_dir=.\workspace\cr_license_detection\training\model
 
 # Legacy
 python .\models\research\object_detection\legacy\eval.py --logtostderr --eval_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates.config --checkpoint_dir=.\workspace\cr_license_detection\training
+
+
+
+# Linux
+# New
+python3 ./research/object_detection/model_main.py --alsologtostderr --train_dir=./workspace/cr_license_detection/training --pipeline_config_path=./workspace/cr_license_detection/training/ssd_mobilenet_v1_coco_cr_plates_linux.config --model_dir=./workspace/cr_license_detection/training/model
+
+# Legacy
+python3 ./models/research/object_detection/legacy/eval.py --logtostderr --eval_dir=./workspace/cr_license_detection/training --pipeline_config_path=./workspace/cr_license_detection/training/ssd_mobilenet_v1_coco_cr_plates_linux.config --checkpoint_dir=./workspace/cr_license_detection/training
