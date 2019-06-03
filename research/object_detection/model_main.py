@@ -20,8 +20,12 @@ from __future__ import print_function
 
 from absl import flags
 
+import sys
 import tensorflow as tf
-
+import matplotlib
+if sys.platform == 'linux':
+  matplotlib.use('agg')
+  
 from object_detection import model_hparams
 from object_detection import model_lib
 

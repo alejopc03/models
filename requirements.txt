@@ -1,0 +1,3 @@
+cython
+tensorflow-gpu==1.2
+pycocotools
