@@ -54,12 +54,12 @@ flags.DEFINE_boolean(
     'one round of eval vs running continuously (default).'
 )
 FLAGS = flags.FLAGS
-
+tf.logging.set_verbosity(tf.logging.INFO)
 
 def main(unused_argv):
   flags.mark_flag_as_required('model_dir')
   flags.mark_flag_as_required('pipeline_config_path')
-  config = tf.estimator.RunConfig(model_dir=FLAGS.model_dir)
+  config = tf.estimator.RunConfig(model_dir=FLAGS.model_dir,log_step_count_steps=1)
 
   train_and_eval_dict = model_lib.create_estimator_and_inputs(
       run_config=config,
