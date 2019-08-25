@@ -1,0 +1,5 @@
+cython
+matplotlib
+pillow
+lxml
+pycocotools

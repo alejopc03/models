@@ -1,9 +1,15 @@
+#------------------------TRAINNG------------------------
 # Windows
 # New
-python .\research\object_detection\model_main.py --alsologtostderr --train_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates.config --model_dir=.\workspace\cr_license_detection\training\model
+# Run on '...\tensorflow\'
+python .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\models\workspace\cr_license_detection\training --pipeline_config_path=.\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --model_dir=.\models\workspace\cr_license_detection\training\model
+
+
+python .\object_detection\model_main.py --alsologtostderr --train_dir=..\workspace\cr_license_detection\training \ 
+--pipeline_config_path=..\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --model_dir=..\workspace\cr_license_detection\training\model
 
 # Legacy
-python .\models\research\object_detection\legacy\eval.py --logtostderr --eval_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates.config --checkpoint_dir=.\workspace\cr_license_detection\training
+python .\models\research\object_detection\legacy\eval.py --logtostderr --eval_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --checkpoint_dir=.\workspace\cr_license_detection\training
 
 
 
@@ -18,3 +24,20 @@ python3 ../../research/object_detection/model_main.py --alsologtostderr --train_
 
 # Legacy
 python3 ./models/research/object_detection/legacy/eval.py --logtostderr --eval_dir=./workspace/cr_license_detection/training --pipeline_config_path=./workspace/cr_license_detection/training/ssd_mobilenet_v1_coco_cr_plates_linux.config --checkpoint_dir=./workspace/cr_license_detection/training
+
+#------------------------FREEZE GRAPH------------------------
+python python/tools/freeze_graph.py \
+--input_graph=export/network.pb \
+--input_checkpoint=<REPLACE_WITH_WORKING_DIR>/export/my_model_checkpoint \
+--output_graph=<REPLACE_WITH_WORKING_DIR>/export/frozen_network.pb \
+--output_node_names=<REPLACE_WITH_YOUR_MODEL_OUTPUT_NODES> \ 
+--input_binary
+
+
+python export_inference_graph.py \
+    --input_type image_tensor \
+    --pipeline_config_path path/to/ssd_inception_v2.config \
+    --trained_checkpoint_prefix path/to/model.ckpt \
+    --output_directory path/to/exported_model_directory
+
+%vpython36% export_inference_graph.py --input_type image_tensor --trained_checkpoint_prefix D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model\model.ckpt-100 --pipeline_config_path D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --output_directory D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model
