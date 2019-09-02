@@ -41,3 +41,10 @@ python export_inference_graph.py \
     --output_directory path/to/exported_model_directory
 
 %vpython36% export_inference_graph.py --input_type image_tensor --trained_checkpoint_prefix D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model\model.ckpt-100 --pipeline_config_path D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --output_directory D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model
+
+
+
+
+
+import plot_anchor_boxes as pltf
+anchor_boxes = pltf.get_feature_map_anchor_boxes(min_scale=0.2,max_scale=0.9,feature_map_shape_list=pltf.get_feature_map_shapes(300, 300))

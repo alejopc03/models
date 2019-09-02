@@ -107,3 +107,12 @@ samples/outreach/blogs/segmentation_blogpost/carvana-image-masking-challenge/
 
 # Annoation files
 *.record
+
+# workspace folders
+research/pycocotools/
+workspace/cr_license_detection/training/model
+workspace/cr_license_detection/training/exported
+
+# Compressed files
+*.zip
+*.rar
