@@ -35,8 +35,7 @@ flags.DEFINE_string('img_path', '', 'Path to images')
 FLAGS = flags.FLAGS
 
 
-# TO-DO replace this with label map
-# for multiple labels add more else if statements
+#TODO: replace this with label map
 def class_text_to_int(row_label):
     temp_label_map = {
         "car-old": 1,
@@ -45,18 +44,10 @@ def class_text_to_int(row_label):
         "small-truck": 4,
         "truck": 5,
         "motorcycle": 6,
-        "disabled": 7
+        "disabled": 7,
+        "vehicle": 8
     }
     return temp_label_map[row_label]
-    #if row_label == FLAGS.label:  # 'ship':
-    #    return 1
-    # comment upper if statement and uncomment these statements for multiple labelling
-    # if row_label == FLAGS.label0:
-    #   return 1
-    # elif row_label == FLAGS.label1:
-    #   return 0
-    #else:
-    #    None
 
 
 def split(df, group):

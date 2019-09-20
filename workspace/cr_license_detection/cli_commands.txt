@@ -44,7 +44,10 @@ python export_inference_graph.py \
 
 
 
-
+# ------------------------Plot SSD anchor boxes------------------------
 
 import plot_anchor_boxes as pltf
 anchor_boxes = pltf.get_feature_map_anchor_boxes(min_scale=0.2,max_scale=0.9,feature_map_shape_list=pltf.get_feature_map_shapes(300, 300))
+
+# ------------------------Generate TF records from .csv annotations------------------------
+%vpython36% generate_tfrecord.py --csv_input=D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\annotations\train_car_plates_9_20_2019.csv --img_path=D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\images\train_car_plates_9_20_2019 --output_path=D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\annotations\train_car_plates_9_20_2019.record
