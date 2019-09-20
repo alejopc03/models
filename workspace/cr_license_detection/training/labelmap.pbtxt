@@ -32,3 +32,8 @@ item {
     id: 7
     name: 'disabled'
 }
+
+item {
+    id: 8
+    name: 'vehicle'
+}
