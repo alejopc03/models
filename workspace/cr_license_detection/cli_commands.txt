@@ -2,7 +2,7 @@
 # Windows
 # New
 # Run on '...\tensorflow\'
-python .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\models\workspace\cr_license_detection\training --pipeline_config_path=.\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --model_dir=.\models\workspace\cr_license_detection\training\model
+%vpython36% .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\models\workspace\cr_license_detection\training --pipeline_config_path=.\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --model_dir=.\models\workspace\cr_license_detection\training\model
 
 
 python .\object_detection\model_main.py --alsologtostderr --train_dir=..\workspace\cr_license_detection\training \ 
@@ -40,7 +40,7 @@ python export_inference_graph.py \
     --trained_checkpoint_prefix path/to/model.ckpt \
     --output_directory path/to/exported_model_directory
 
-%vpython36% export_inference_graph.py --input_type image_tensor --trained_checkpoint_prefix D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model\model.ckpt-100 --pipeline_config_path D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --output_directory D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model
+%vpython36% export_inference_graph.py --input_type image_tensor --trained_checkpoint_prefix D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model\model.ckpt-5000 --pipeline_config_path D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --output_directory D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\training\model\exported
 
 
 

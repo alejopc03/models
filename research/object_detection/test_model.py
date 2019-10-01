@@ -55,7 +55,7 @@ def run_inference_for_single_image(image, graph):
 
     return output_dict
 
-MODEL_PATH = 'D:\\AutomatedTeardown\\research\\tensorflow\\models\\workspace\\cr_license_detection\\training\\exported'
+MODEL_PATH = 'D:\\AutomatedTeardown\\research\\tensorflow\\models\\workspace\\cr_license_detection\\training\\model\\exported'
 PATH_TO_LABELS = 'D:\\AutomatedTeardown\\research\\tensorflow\\models\\workspace\\cr_license_detection\\training\\labelmap.pbtxt'
 PATH_TO_FROZEN_GRAPH = os.path.join(MODEL_PATH, 'frozen_inference_graph.pb')
 
@@ -69,10 +69,10 @@ with detection_graph.as_default():
 
 category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
 
-PATH_TO_TEST_IMAGES_DIR = 'D:\\AutomatedTeardown\\research\\tensorflow\\models\\workspace\\cr_license_detection\\images\\extras'
+PATH_TO_TEST_IMAGES_DIR = 'D:\\AutomatedTeardown\\research\\tensorflow\\models\\workspace\\cr_license_detection\\images\\test_car_plates_9_20_2019'
 TEST_IMAGES_LIST = os.listdir(PATH_TO_TEST_IMAGES_DIR)
 IMAGE_SIZE = (12, 8)
-num_images = 6
+num_images = 30
 TEST_IMAGE_PATHS = []
 for i in range(num_images):
     TEST_IMAGE_PATHS.append(os.path.join(PATH_TO_TEST_IMAGES_DIR, random.choice(TEST_IMAGES_LIST)))
