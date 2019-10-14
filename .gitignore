@@ -110,8 +110,8 @@ samples/outreach/blogs/segmentation_blogpost/carvana-image-masking-challenge/
 
 # workspace folders
 research/pycocotools/
-workspace/cr_license_detection/training/model
-workspace/cr_license_detection/training/exported
+workspace/cr_license_detection/training
+workspace/cr_license_detection/model_results
 
 # Compressed files
 *.zip

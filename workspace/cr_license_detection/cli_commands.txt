@@ -1,29 +1,21 @@
 #------------------------TRAINNG------------------------
 # Windows
-# New
 # Run on '...\tensorflow\'
-%vpython36% .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\models\workspace\cr_license_detection\training --pipeline_config_path=.\models\workspace\cr_license_detection\training\faster_rcnn_inception_v2_coco_car_plates.config --model_dir=.\models\workspace\cr_license_detection\training\model
+%vpython36% .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\models\workspace\cr_license_detection\training --pipeline_config_path=.\models\workspace\cr_license_detection\configs\faster_rcnn_inception_v2_coco_car_plates.config --model_dir=.\models\workspace\cr_license_detection\training\model
 
-
-python .\object_detection\model_main.py --alsologtostderr --train_dir=..\workspace\cr_license_detection\training \ 
---pipeline_config_path=..\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --model_dir=..\workspace\cr_license_detection\training\model
 
 # Legacy
 python .\models\research\object_detection\legacy\eval.py --logtostderr --eval_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --checkpoint_dir=.\workspace\cr_license_detection\training
 %vpython36% .\models\research\object_detection\legacy\eval.py --logtostderr --eval_dir=.\models\workspace\cr_license_detection\eval --pipeline_config_path=.\models\workspace\cr_license_detection\training\model\exported\pipeline.config --checkpoint_dir=.\models\workspace\cr_license_detection\training\model\exported
 
 
-# Linux
-#Generate .record
-python3 scripts/generate_tfrecord.py --csv_input=cr_license_detection/annotations/train_labels.csv --output_path=cr_license_detection/annotations/train.record --img_path=cr_license_detection/images/train/
-python3 scripts/generate_tfrecord.py --csv_input=cr_license_detection/annotations/test_labels.csv --output_path=cr_license_detection/annotations/test.record --img_path=cr_license_detection/images/test/
-#Training
-# New
+# Linux (CDR)
 python3 ./research/object_detection/model_main.py --alsologtostderr --train_dir=./workspace/cr_license_detection/training --pipeline_config_path=./workspace/cr_license_detection/training/ssd_mobilenet_v1_coco_cr_plates_linux.config --model_dir=./workspace/cr_license_detection/training/model
 python3 ../../research/object_detection/model_main.py --alsologtostderr --train_dir=./training --pipeline_config_path=./training/ssd_mobilenet_v1_coco_cr_plates_linux.config --model_dir=./training/model
 
 # Legacy
 python3 ./models/research/object_detection/legacy/eval.py --logtostderr --eval_dir=./workspace/cr_license_detection/training --pipeline_config_path=./workspace/cr_license_detection/training/ssd_mobilenet_v1_coco_cr_plates_linux.config --checkpoint_dir=./workspace/cr_license_detection/training
+
 
 #------------------------FREEZE GRAPH------------------------
 python python/tools/freeze_graph.py \
@@ -48,6 +40,7 @@ python export_inference_graph.py \
 
 import plot_anchor_boxes as pltf
 anchor_boxes = pltf.get_feature_map_anchor_boxes(min_scale=0.2,max_scale=0.9,feature_map_shape_list=pltf.get_feature_map_shapes(300, 300))
+
 
 # ------------------------Generate TF records from .csv annotations------------------------
 %vpython36% generate_tfrecord.py --csv_input=D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\annotations\train_car_plates_9_20_2019.csv --img_path=D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\images\train_car_plates_9_20_2019 --output_path=D:\AutomatedTeardown\research\tensorflow\models\workspace\cr_license_detection\annotations\train_car_plates_9_20_2019.record

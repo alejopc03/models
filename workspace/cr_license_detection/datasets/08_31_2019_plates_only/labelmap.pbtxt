@@ -1,0 +1,34 @@
+item {
+    id: 1
+    name: 'car-old'
+}
+
+item {
+    id: 2
+    name: 'car-new'
+}
+
+item {
+    id: 3
+    name: 'taxi'
+}
+
+item {
+    id: 4
+    name: 'small-truck'
+}
+
+item {
+    id: 5
+    name: 'truck'
+}
+
+item {
+    id: 6
+    name: 'motorcycle'
+}
+
+item {
+    id: 7
+    name: 'disabled'
+}
