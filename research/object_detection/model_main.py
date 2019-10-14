@@ -20,11 +20,16 @@ from __future__ import print_function
 
 from absl import flags
 
+import os
 import sys
 import tensorflow as tf
 import matplotlib
 if sys.platform == 'linux':
   matplotlib.use('agg')
+current_dir = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(current_dir,'..')) # 'tensorflow/research'
+sys.path.append(os.path.join(current_dir)) # 'tensorflow/research/object_detection'
+sys.path.append(os.path.join(current_dir,'..','slim')) # 'tensorflow/research/slim'
   
 from object_detection import model_hparams
 from object_detection import model_lib

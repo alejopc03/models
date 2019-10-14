@@ -2,7 +2,7 @@
 # Windows
 # New
 # Run on '...\tensorflow\'
-%vpython36% .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\models\workspace\cr_license_detection\training --pipeline_config_path=.\models\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --model_dir=.\models\workspace\cr_license_detection\training\model
+%vpython36% .\models\research\object_detection\model_main.py --alsologtostderr --train_dir=.\models\workspace\cr_license_detection\training --pipeline_config_path=.\models\workspace\cr_license_detection\training\faster_rcnn_inception_v2_coco_car_plates.config --model_dir=.\models\workspace\cr_license_detection\training\model
 
 
 python .\object_detection\model_main.py --alsologtostderr --train_dir=..\workspace\cr_license_detection\training \ 
@@ -10,7 +10,7 @@ python .\object_detection\model_main.py --alsologtostderr --train_dir=..\workspa
 
 # Legacy
 python .\models\research\object_detection\legacy\eval.py --logtostderr --eval_dir=.\workspace\cr_license_detection\training --pipeline_config_path=.\workspace\cr_license_detection\training\ssd_mobilenet_v1_coco_cr_plates_win.config --checkpoint_dir=.\workspace\cr_license_detection\training
-
+%vpython36% .\models\research\object_detection\legacy\eval.py --logtostderr --eval_dir=.\models\workspace\cr_license_detection\eval --pipeline_config_path=.\models\workspace\cr_license_detection\training\model\exported\pipeline.config --checkpoint_dir=.\models\workspace\cr_license_detection\training\model\exported
 
 
 # Linux
